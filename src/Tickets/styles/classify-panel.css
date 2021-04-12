@@ -1,0 +1,55 @@
+.classify-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #edeaea;
+  padding: 4em;
+}
+
+.classify-heading {
+  align-self: flex-start;
+  color: aqua;
+  border-bottom: 2px solid aqua;
+}
+
+.classify-form {
+  margin-top: 2em;
+  flex-grow: 2;
+}
+
+.classify-select {
+  margin-top: 1em;
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.classify-title {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.character-count-text {
+  margin-top: 1em;
+  align-self: flex-start;
+  color: darkgray;
+  font-size: 0.8rem;
+}
+
+.character-count-text.exceeded {
+  color: red;
+}
+
+.proceed-btn {
+  align-self: flex-end;
+  background-color: aqua;
+  border: none;
+  color: white;
+  width: 6em;
+  height: 3em;
+  border-radius: 0.5em;
+}
+
+.proceed-btn:disabled {
+  color: darkgray;
+}

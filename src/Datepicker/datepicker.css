@@ -1,0 +1,86 @@
+.dob-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dob-input {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: darkgray;
+}
+
+input {
+  margin-top: 1em;
+  width: 20em;
+  height: 2em;
+  background-color: transparent;
+  border-color: darkgray;
+  border-radius: 0.5em;
+  border-style: solid;
+  outline: none;
+}
+
+button.datepicker-btn {
+  border: none;
+  background-color: transparent;
+  color: darkgray;
+  font-weight: bold;
+  outline: none;
+}
+
+button.datepicker-btn:hover {
+  color: aqua;
+}
+
+button.datepicker-btn:nth-child(-n + 3) {
+  align-self: end;
+}
+
+button.datepicker-btn:nth-child(n + 4) {
+  align-self: start;
+}
+
+.rotate {
+  transform: rotate(-180deg);
+}
+
+.datepicker-container {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  height: 6em;
+  width: 75%;
+  margin-top: 1em;
+  border-radius: 0.2em;
+  background-color: white;
+  box-shadow: 1px 1px 3px darkgray;
+}
+
+.datepicker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  width: 65%;
+}
+
+.date-text {
+  font-size: 0.8rem;
+  text-align: center;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  padding: 6px 0px;
+}
+
+.date-text.highlight {
+  border-color: darkgrey;
+}

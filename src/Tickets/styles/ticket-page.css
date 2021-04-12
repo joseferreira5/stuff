@@ -1,0 +1,60 @@
+.ticket-page {
+  display: grid;
+  grid-template-columns: 10% 40% 50%;
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ticket-btn-container {
+  position: relative;
+  margin-top: 3em;
+}
+
+.user-icon {
+  margin-top: 3em;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  outline: none;
+}
+
+.ticket-btn {
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+}
+
+.ticket-btn.selected {
+  background-color: black;
+  color: white;
+}
+
+.status {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 50%;
+}
+
+.status.New {
+  background-color: lightcoral;
+}
+
+.status.Snoozed {
+  background-color: yellow;
+}
+
+.status.Read {
+  background-color: transparent;
+}
