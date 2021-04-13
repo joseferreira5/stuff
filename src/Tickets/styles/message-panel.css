@@ -1,14 +1,59 @@
 .message-panel {
-  padding: 4em;
+  display: flex;
+  flex-direction: column;
 }
 
-.message-container {
+.upper-panel {
+  padding: 2em 4em;
+  flex-grow: 2;
+}
+
+.ticket-title {
+  color: darkgray;
+  font-weight: 400;
+}
+
+.message-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1em;
   margin-top: 3em;
   width: 80%;
   height: 3em;
   border-radius: 1em;
+  background-color: #edeaea;
 }
 
 .message-text {
   text-align: start;
+}
+
+.conversation-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.2em solid lightgray;
+  height: 5em;
+}
+
+.conversation-input {
+  border: none;
+  outline: none;
+  width: 80%;
+  margin: 0;
+}
+
+.send-message-btn {
+  background-color: aqua;
+  border: none;
+  color: white;
+  width: 6em;
+  height: 3em;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+.send-message-btn.hide {
+  display: none;
 }
