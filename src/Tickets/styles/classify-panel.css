@@ -53,4 +53,5 @@
 
 .proceed-btn:disabled {
   color: darkgray;
+  background-color: lightblue;
 }

@@ -72,26 +72,73 @@ export default function Datepicker() {
     setHighlight(2);
   };
 
+  const dateArray = date.toDateString().slice(4, 15).split(' ');
+
   return (
     <div className="dob-container" ref={containerEl}>
       <div className="dob-input">
         <label className="datepicker-label">
           Date of birth
-          <input readOnly value={date.toDateString().slice(3, 15)} ref={inputEl} onFocus={onFocus} />
+          <input 
+            readOnly 
+            value={date.toDateString().slice(3, 15)} 
+            ref={inputEl} 
+            onFocus={onFocus} 
+          />
         </label>
       </div>
-      {focused === true &&
-        <div className="datepicker-container" >
+      {focused &&
+        <div className="datepicker-container">
           <div className="datepicker-grid">
-            <button className="datepicker-btn" name="incMonth" onClick={changeMonth}>^</button>
-            <button className="datepicker-btn" name="incDay" onClick={changeDay}>^</button>
-            <button className="datepicker-btn" name="incYear" onClick={changeYear}>^</button>
-            {date.toDateString().slice(4, 15).split(' ').map((element, index) =>
-              <div className={`date-text ${highlight === index && 'highlight'}`} key={index}>{element}</div>
+            <button 
+              className="datepicker-btn" 
+              name="incMonth" 
+              onClick={changeMonth}
+            >
+              ^
+            </button>
+            <button 
+              className="datepicker-btn" 
+              name="incDay" 
+              onClick={changeDay}
+            >
+              ^
+            </button>
+            <button 
+              className="datepicker-btn" 
+              name="incYear" 
+              onClick={changeYear}
+            >
+              ^
+            </button>
+            {dateArray.map((element, index) =>
+              <div 
+                className={`date-text ${highlight === index && 'highlight'}`} 
+                key={index}>
+                  {element}
+              </div>
             )}
-            <button className="rotate datepicker-btn" name="decMonth" onClick={changeMonth}>^</button>
-            <button className="rotate datepicker-btn" name="decDay" onClick={changeDay}>^</button>
-            <button className="rotate datepicker-btn" name="decYear" onClick={changeYear}>^</button>
+            <button 
+              className="rotate datepicker-btn" 
+              name="decMonth" 
+              onClick={changeMonth}
+            >
+              ^
+            </button>
+            <button 
+              className="rotate datepicker-btn" 
+              name="decDay" 
+              onClick={changeDay}
+            >
+              ^
+            </button>
+            <button 
+              className="rotate datepicker-btn" 
+              name="decYear" 
+              onClick={changeYear}
+            >
+              ^
+            </button>
           </div>
         </div>
       }

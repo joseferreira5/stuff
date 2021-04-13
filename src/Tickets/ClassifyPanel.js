@@ -2,39 +2,35 @@ import { useState } from 'react';
 
 import './styles/classify-panel.css';
 
-export default function ClassifyPanel({ updateTicket }) {
-  const [charCount, setCharCount] = useState(25);
+const charLimit = 25;
+
+export default function ClassifyPanel({ ticket, updateTicket }) {
   const [taskName, setTaskName] = useState('');
   const [goal, setGoal] = useState('');
 
-  const handleTitleChange = event => {
-    const newTaskName = event.target.value;
-  
-    if (newTaskName.length > taskName.length) {
-      setCharCount(charCount - 1);
-    } else if (newTaskName.length < taskName.length) {
-      setCharCount(charCount + 1);
-    }
+  const charCount = charLimit - taskName.length;
 
-    setTaskName(newTaskName);
-  }
+  const handleTitleChange = event => {
+    setTaskName(event.target.value);
+  };
 
   const handleGoalChange = event => {
-    const newGoal = event.target.value;
-
-    setGoal(newGoal);
-  }
+    setGoal(event.target.value);
+  };
 
   const handleSubmit = event =>{
     event.preventDefault();
 
     const data = {
+      ...ticket,
       title: taskName,
-      goal: goal
+      goal: goal,
     };
 
     updateTicket(data);
-  }
+    setTaskName('');
+    setGoal('');
+  };
 
   return (
     <section className="classify-panel">
@@ -54,9 +50,14 @@ export default function ClassifyPanel({ updateTicket }) {
           Task name (as shown to the user)
           <input type="text" value={taskName} onChange={handleTitleChange}/>
         </label>
-        <span className={`character-count-text ${charCount < 0 && 'exceeded'}`}>(Characters left: {charCount})</span>
+        <span 
+          className={`character-count-text ${charCount < 0 && 'exceeded'}`}>
+            (Characters left: {charCount})
+        </span>
       </form>
-      <button className="proceed-btn" disabled={charCount < 0} onClick={handleSubmit}>Proceed</button>
+      <button className="proceed-btn" disabled={charCount < 0} onClick={handleSubmit}>
+        Proceed
+      </button>
     </section>
-  )
-}
+  );
+};
